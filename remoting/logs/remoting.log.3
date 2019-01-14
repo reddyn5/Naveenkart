@@ -1,0 +1,29 @@
+Oct 29, 2018 11:14:39 AM org.jenkinsci.remoting.util.AnonymousClassWarnings warn
+WARNING: Attempt to (de-)serialize anonymous class org.jenkinsci.plugins.gitclient.Git$1; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+Oct 29, 2018 11:14:43 AM org.jenkinsci.remoting.util.AnonymousClassWarnings warn
+WARNING: Attempt to (de-)serialize anonymous class org.jenkinsci.plugins.gitclient.RemoteGitImpl$CommandInvocationHandler$1; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+Oct 29, 2018 12:21:01 PM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1540795621033 hasn't completed by 1540795861034
+	at hudson.remoting.PingThread.ping(PingThread.java:134)
+	at hudson.remoting.PingThread.run(PingThread.java:90)
+
+Oct 29, 2018 12:22:48 PM hudson.remoting.Channel close
+WARNING: Having to terminate early
+java.io.IOException: Broken pipe
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:313)
+	at hudson.remoting.StandardOutputStream.write(StandardOutputStream.java:83)
+	at hudson.remoting.ChunkedOutputStream.sendFrame(ChunkedOutputStream.java:89)
+	at hudson.remoting.ChunkedOutputStream.sendBreak(ChunkedOutputStream.java:62)
+	at hudson.remoting.ChunkedCommandTransport.writeBlock(ChunkedCommandTransport.java:46)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.write(AbstractSynchronousByteArrayCommandTransport.java:47)
+	at hudson.remoting.Channel.send(Channel.java:721)
+	at hudson.remoting.Channel.close(Channel.java:1436)
+	at hudson.remoting.Channel.close(Channel.java:1403)
+	at hudson.remoting.Channel$CloseCommand.execute(Channel.java:1270)
+	at hudson.remoting.Channel$1.handle(Channel.java:565)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:85)
+
+Oct 29, 2018 12:22:48 PM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@543dc399: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@65ae6ba4:channel": channel is already closed

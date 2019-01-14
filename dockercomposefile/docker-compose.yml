@@ -1,0 +1,23 @@
+version: '2.0'
+
+services:
+  web:
+   image: nginx
+   ports:
+   - "9090:80"
+  database:
+      image: redis
+  jenkins:  
+    image: jenkins:latest
+    container_name: jenkins
+    user: jenkins
+    ports:
+      - "8090:8080"
+      - "5000:5000"
+      - "6000:6000"   
+  tomcat:
+    container_name: tomcat-container
+    image: tomcat
+    ports:
+      - "8009:8080"
+
